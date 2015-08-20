@@ -1,3 +1,5 @@
+# coding: utf-8
+from __future__ import print_function, unicode_literals
 import argparse
 from wordcount.core import count_words, top_words
 

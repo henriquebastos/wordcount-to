@@ -1,18 +1,22 @@
-import tkinter
-from tkinter import constants
-from tkinter.filedialog import askopenfile
-from tkinter.scrolledtext import ScrolledText
+try:
+    # PY3
+    import tkinter
+    from tkinter import constants
+    from tkinter.filedialog import askopenfile
+    from tkinter.scrolledtext import ScrolledText
+except ImportError:
+    #PY2
+    import Tkinter as tkinter
+    import Tkconstants as constants
+    from tkFileDialog import askopenfile
+    from ScrolledText import ScrolledText
+
 
 from wordcount.core import count_words, top_words, lines
 
 
 class SmartScrolledText(ScrolledText):
-    @property
-    def text(self):
-        return self.get(1.0, tkinter.END)
-
-    @text.setter
-    def text(self, value):
+    def set_text(self, value):
         self.delete(1.0, tkinter.END)
         self.insert(tkinter.INSERT, value)
 
@@ -66,10 +70,10 @@ class App:
 
     def show_words(self):
         self._file.seek(0)
-
         op = self.MODE[self.option.get()]
+        content = lines(op(self._file))
 
-        self.textarea.text = lines(op(self._file))
+        self.textarea.set_text(content)
 
 
 def gui():
