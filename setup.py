@@ -8,11 +8,11 @@ setup(name='wordcount',
       author="Henrique Bastos", author_email="henrique@bastos.net",
       license="MIT",
       packages=['wordcount'],
-      # entry_points={
-      #     'console_scripts': [
-      #         'wordcount = wordcount.__main__:main'
-      #     ]
-      # },
+      entry_points={
+          'console_scripts': [
+              'wordcount = wordcount.__main__:main'
+          ]
+      },
       zip_safe=False,
       platforms='any',
       include_package_data=False,
