@@ -40,6 +40,7 @@ class App:
         # define buttons
         rb1 = tkinter.Radiobutton(master=self.parent, text='Count', value=self.COUNT, variable=self.option, command=self.on_change)
         rb1.pack(anchor=tkinter.W)
+        rb1.select()
 
         rb2 = tkinter.Radiobutton(master=self.parent, text='Top', value=self.TOP, variable=self.option, command=self.on_change)
         rb2.pack(anchor=tkinter.W)
