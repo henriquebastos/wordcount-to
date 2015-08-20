@@ -3,7 +3,7 @@ from tkinter import constants
 from tkinter.filedialog import askopenfile
 from tkinter.scrolledtext import ScrolledText
 
-from core import count_words, top_words, lines
+from wordcount.core import count_words, top_words, lines
 
 
 class SmartScrolledText(ScrolledText):

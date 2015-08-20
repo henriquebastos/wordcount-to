@@ -1,7 +1,7 @@
 import sys
 
-from gui import gui
-from cli import cli
+from wordcount.gui import gui
+from wordcount.cli import cli
 
 
 if len(sys.argv) < 2:
