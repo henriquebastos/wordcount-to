@@ -1,0 +1,2 @@
+python-decouple==2.2
+wheel==0.24.0
